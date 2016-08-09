@@ -51,6 +51,17 @@ $(function() {
          * and that the name is not empty.
          */
 
+        it('have a name defined', function() {
+            allFeeds.forEach(function(feed) { //loop through each feed
+                expect(feed.name).toBeDefined(); //check if name is defined
+            });
+        });
+
+        it ('have a name length', function() {
+            allFeeds.forEach(function(feed) { //loop through each feed
+                expect(feed.name.length).not.toBe(0); //check if name has content
+            });
+        });
     });
 
 
