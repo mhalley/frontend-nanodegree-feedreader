@@ -123,6 +123,20 @@ $(function() {
         
 
     /* TODO: Write a new test suite named "New Feed Selection" */
-    
+    describe ('New Feed Selection', function() {
+        var currentTitle = $('.header-title').html();
+
+        beforeEach(function(done){
+            loadFeed(1, done); //load a different feed
+        });
+
+        afterEach(function(done) {
+            loadFeed(0, done); //return to original feed after content change 
+        });
+
+        it('changes when new feed is loaded', function() {
+            expect($('.header-title').html()).not.toBe(currentTitle);
+        });
+    }) //Credit Rennie: https://discussions.udacity.com/t/trouble-with-testing-the-entries-existence-in-asychronous-test/19247/4
    
 }());
