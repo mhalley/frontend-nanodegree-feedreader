@@ -104,14 +104,22 @@ $(function() {
     });   
 
     /* TODO: Write a new test suite named "Initial Entries" */
-    
+    describe ('Initial Entries', function() {
+        
+        beforeEach(function(done) {
+            loadFeed(0, done);
+        });
         /* TODO: Write a test that ensures when the loadFeed
          * function is called and completes its work, there is at least
          * a single .entry element within the .feed container.
          * Remember, loadFeed() is asynchronous so this test will require
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
-        
+         it('are in the .feed container', function() {
+            expect($('.feed .entry').length).toBeGreaterThan(0); //check that the feed entry has content
+        });
+    }); //Credit Rennie: https://discussions.udacity.com/t/trouble-with-testing-the-entries-existence-in-asychronous-test/19247/4
+
         
 
     /* TODO: Write a new test suite named "New Feed Selection" */
