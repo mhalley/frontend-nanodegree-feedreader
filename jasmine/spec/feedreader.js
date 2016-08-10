@@ -66,20 +66,42 @@ $(function() {
 
 
     /* TODO: Write a new test suite named "The menu" */
-    
+      describe('The menu', function() {
+        var container,
+            feedList,
+            feedItemTemplate,
+            feedID,
+            menuIcon;
+
+        beforeEach(function() {
+            container = $('.feed'),
+            feedList = $('.feed-list'),
+            feedItemTemplate = Handlebars.compile($('.tpl-feed-list-item').html()),
+            feedId = 0,
+            menuIcon = $('.menu-icon-link');
+
+        });
         /* TODO: Write a test that ensures the menu element is
          * hidden by default. You'll have to analyze the HTML and
          * the CSS to determine how we're performing the
          * hiding/showing of the menu element.
          */
-
+        it('is hidden on load', function() {
+            expect($('body').hasClass('menu-hidden')).toBe(true); //check if class hiding menu exists
+        });
 
          /* TODO: Write a test that ensures the menu changes
           * visibility when the menu icon is clicked. This test
           * should have two expectations: does the menu display when
           * clicked and does it hide when clicked again.
           */
-
+        it('shows when menu icon is clicked', function() {
+            $('.menu-icon-link').trigger('click');
+            expect($('body').hasClass('menu-hidden')).toBe(false); //check if class hiding menu class is turned off by a click
+            $('.menu-icon-link').trigger('click');
+            expect($('body').hasClass('menu-hidden')).toBe(true); //check if class hiding menu class is turned back on by a click
+        });
+    });   
 
     /* TODO: Write a new test suite named "Initial Entries" */
     
