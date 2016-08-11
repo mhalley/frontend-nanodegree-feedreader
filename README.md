@@ -1,6 +1,6 @@
 # Testing the feed reeder
 
-This file uses Jasmine (http://jasmine.github.io/), a framework for testing. The file feedreader.js runs several tests on on the feed reader application in this file. 
+The feedreader.js file uses Jasmine (http://jasmine.github.io/), a framework for testing. The file is found in the js/ folder. Feedreader.js runs several tests on on the feed reader application in this file. 
 
 # How it works
 
