@@ -67,20 +67,6 @@ $(function() {
 
     /* TODO: Write a new test suite named "The menu" */
       describe('The menu', function() {
-        var container,
-            feedList,
-            feedItemTemplate,
-            feedID,
-            menuIcon;
-
-        beforeEach(function() {
-            container = $('.feed'),
-            feedList = $('.feed-list'),
-            feedItemTemplate = Handlebars.compile($('.tpl-feed-list-item').html()),
-            feedId = 0,
-            menuIcon = $('.menu-icon-link');
-
-        });
         /* TODO: Write a test that ensures the menu element is
          * hidden by default. You'll have to analyze the HTML and
          * the CSS to determine how we're performing the
